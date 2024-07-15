@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { sendUnsubscribeOtp, verifyUnsubscribeOtp, deleteUser } from '../app/actions';
 import FadeIn from './FadeIn';
@@ -38,47 +39,46 @@ const UnsubscribeOverlay = ({ onClose }: { onClose: () => void }) => {
   return (
     <FadeIn>
       <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md">
-        {step === 1 && (
-          <>
-            <h2 className="text-xl font-bold mb-4">Unsubscribe from bullsEye</h2>
-            <p className="text-gray-700 mb-4">We're sorry to see you go. Please verify your email to unsubscribe.</p>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-2 p-2 border border-gray-300 rounded-lg w-full"
-            />
-            <button onClick={handleSendOtp} className="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
-              Send OTP
-            </button>
-          </>
-        )}
-        {step === 2 && (
-          <>
-            <h2 className="text-xl font-bold mb-4">Enter OTP to Unsubscribe</h2>
-            <p className="text-gray-700 mb-4">{message}</p>
-            <input
-              type="text"
-              placeholder="Enter OTP"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              className="mt-2 p-2 border border-gray-300 rounded-lg w-full"
-            />
-            <button onClick={handleVerifyOtp} className="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
-              Verify OTP
-            </button>
-          </>
-        )}
-        <button onClick={onClose} className="mt-4 px-6 py-2 bg-gray-300 text-gray-800 font-semibold rounded-lg hover:bg-gray-400">
-          Cancel
-        </button>
+        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md">
+          {step === 1 && (
+            <>
+              <h2 className="text-xl font-bold mb-4">Unsubscribe from bullsEye</h2>
+              <p className="text-gray-700 mb-4">We&apos;re sorry to see you go. Please verify your email to unsubscribe.</p>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="mt-2 p-2 border border-gray-300 rounded-lg w-full"
+              />
+              <button onClick={handleSendOtp} className="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
+                Send OTP
+              </button>
+            </>
+          )}
+          {step === 2 && (
+            <>
+              <h2 className="text-xl font-bold mb-4">Enter OTP to Unsubscribe</h2>
+              <p className="text-gray-700 mb-4">{message}</p>
+              <input
+                type="text"
+                placeholder="Enter OTP"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                className="mt-2 p-2 border border-gray-300 rounded-lg w-full"
+              />
+              <button onClick={handleVerifyOtp} className="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
+                Verify OTP
+              </button>
+            </>
+          )}
+          <button onClick={onClose} className="mt-4 px-6 py-2 bg-gray-300 text-gray-800 font-semibold rounded-lg hover:bg-gray-400">
+            Cancel
+          </button>
+        </div>
       </div>
-    </div>
     </FadeIn>
-
-      );
+  );
 };
 
-      export default UnsubscribeOverlay;
+export default UnsubscribeOverlay;

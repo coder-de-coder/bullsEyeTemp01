@@ -52,7 +52,7 @@ const UnsubscribeModal: React.FC<UnsubscribeModalProps> = ({ closeModal }) => {
           {step === 1 && (
             <>
               <h2 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r to-yellow-500 from-white font-bold mb-4">Unsubscribe from bullsEye</h2>
-              <p className="text-gray-300 mb-4">We're sorry to see you go. Please verify your email to unsubscribe.</p>
+              <p className="text-gray-300 mb-4">We&apos;re sorry to see you go. Please verify your email to unsubscribe.</p>
               <input
                 type="email"
                 placeholder="Enter your email"
